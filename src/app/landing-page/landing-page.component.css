@@ -1,0 +1,187 @@
+.navbar{
+    border-bottom: #191970;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.button_register {
+    color: #191970;
+}
+
+.button_register:hover {
+    font-weight: bold;
+    color: #191970;
+    border-color: #191970;
+}
+
+.button_login {
+    background-color: #191970;
+    color: white;
+}
+
+.button_login:hover {
+    background-color: white;
+    color: #191970;
+    font-weight: bold;
+    border-color: #191970;
+}
+
+.subheading {
+    color: grey;
+}
+
+img {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+/* .small-card:hover {
+    transform: scale(1.1);
+} */
+
+.header {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    color: #191970;
+}
+
+.sc_header {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #191970;
+}
+
+.tagline {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    right: 150px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagline_head {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    animation-name: moveRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    color: #191970;
+}
+
+.tagline_text {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    position: relative;
+    animation-name: moveRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    color: #191970;
+}
+
+.tagline_buynow {
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 4px;
+    font-weight: 300;
+    position: relative;
+    animation-name: moveRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    color: #191970;
+    border-color: #191970;
+}
+
+.tagline_buynow:hover {
+    background-color: #191970;
+    color: white;
+}
+
+@keyframes moveRight {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 50px;
+    }
+}
+
+footer {
+    padding: 20px 20px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.compInfo {
+    color: grey;
+    font-weight: bold;
+}
+
+.linkColor {
+    color: grey;
+}
+
+.linkColor:hover {
+    color: #191970;
+}
+
+.border {
+    border-top: solid #F5F5F5 2px;
+}
+
+.compName {
+    color: white;
+    font-weight: bolder;
+    background-color: #191970;
+    letter-spacing: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.footer_heading {
+    color: #191970;
+    font-weight: 600;
+}
+
+.contactInfo {
+    color: grey;
+}
+
+.icon {
+    color: #191970;
+}
+
+.brand1 {
+    background-color: #191970;
+    color: white;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.brand2 {
+    background-color: #F5F5F5;
+    color: #191970;
+    margin-right: 10px;
+    padding: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: bolder;
+}

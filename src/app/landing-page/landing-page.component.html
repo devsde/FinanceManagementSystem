@@ -1,0 +1,247 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link linkColor" href="#eligibilty">Eligibility</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkColor" href="" [routerLink]="['/card']">Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkColor" href="#footer">Contact</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link linkColor" href="" [routerLink]="['/login']">Shop</a>
+            </li>
+        </ul>
+        <button class="btn  my-2 my-sm-0 button_register" type="submit" [routerLink]="['/register']">Register</button>
+        <button class="btn  my-2 my-sm-0 button_login" type="submit" [routerLink]="['/login']">Login</button>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div id="home">
+    </div>
+
+
+
+</div>
+
+<!-- image -->
+<img class="homeimage" src="./assets/images/demo-card.png" alt="home-image" />
+
+<div class="tagline">
+    <h1 class="tagline_head">Grab It</h1>
+    <h2 class="tagline_text">Before Its Gone!</h2>
+    <button type="button" class="btn btn-outline-light btn-lg tagline_buynow" [routerLink]="['/login']">Shop Now</button>
+</div>
+
+
+
+<!-- eligibilty -->
+<div id="eligibilty">
+    <div>
+        <div class="container text-center py-5">
+            <h1 class="display-4 header"> Eligibilty</h1>
+            <p class="lead subheading">The process to apply for a CardHut No Cost EMI Card online is quick and simple. <br>
+                You can apply for it if you meet the following eligibilty criteria:
+            </p>
+        </div>
+
+    <div class="row">
+        <div class="col-2"></div>
+            <div class="col-3 d-flex justify-content-center">
+                <div class="card small-card" style="width: 14rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 sc_header">EMI Card</h6>
+                        <p class="card-text">You should be between 21 and 60 years of age to apply for an CardHut No Cost EMI Card.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                <div class="card small-card" style="width: 14rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 sc_header">Insta EMI Card</h6>
+                        <p class="card-text">You should be between 25 and 60 years of age to apply for an CardHut No Cost EMI Card. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 d-flex justify-content-center">
+                <div class="card small-card" style="width: 14rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 sc_header">Income Source </h6>
+                        <p class="card-text">You must have a regular source of income.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+<!-----------------------------------------faq start ------------------------------------------ -- -->
+<h2 class="text-center  header">FAQ Section</h2><br>
+<div class="accordion container" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"  aria-controls="collapseOne">
+            What is the CardHut EMI Card? 
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          The CardHut EMI Card lets you convert all your purchases into easy EMIs. You can use it to shop for the latest products worth up to Rs. 4 lakh at your preferred store.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How can I get my CardHut EMI Card?
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          A fully digital application precess allows pre-approved customers to get their CardHut EMI Card in just 3 easy steps and activate their card instantly on CardHut Web Application.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What is the interest rate on the products bought on the CardHut EMI Card?
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          You divide just the cost of your product into easy EMIs along with One Time Transaction fees.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Can I withdraw money from my CardHut EMI Card?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+          <div class="card-body">
+            Unfortunately, you cannot withdraw money from an ATM and other platforms with your CardHut EMI Card.
+          </div>
+        </div>
+      </div>
+ 
+  <div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          How can I increase my CardHut EMI Card's limit?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+      <div class="card-body">
+        The loan limit on your EMI Card depends on multiple factors such as your CIBIL score, income level and repayment capacity. CardHut reviews its customers' CardHut EMI Card loan limit every quarter. You can increase your card's limit by maintaining a good repayment history.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----------------------------------------faq end ------------------------------------------ -- -->
+
+<!-- <div class="row">
+    <div class="col-4 border"></div>
+    <div class="col-4 "></div>
+    <div class="col-4 border"></div>
+</div> -->
+
+<hr style="height:2px; border-width:0; color:#191970; background-color:#191970; ">
+
+<!-- footer -->
+<footer class="text-white pb-4" id="footer">
+    <div class="container text-center text-md-left"></div>
+    <div class="row text-center text-md-left">
+
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
+            <h5 class="text-uppercase mb-4 compName">
+                CardHut
+            </h5>
+            <!-- <p class="compInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolore cumque fugit
+                doloribus earum. Perferendis sed voluptate necessitatibus quas molestiae alias, temporibus libero, aut
+                nostrum repellat rem doloribus! Aut autem delectus veniam similique!</p> -->
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="mb-4 text-uppercase footer_heading">
+                Products
+            </h5>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Emi Cards</a>
+            </p>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Shop</a>
+            </p>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">The Providers</a>
+            </p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4  footer_heading">
+                Useful links
+            </h5>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Become an affiliates</a>
+            </p>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Your Accounts</a>
+            </p>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Shipping Rates</a>
+            </p>
+            <p>
+                <a href="#" class="linkColor" style="text-decoration: none;">Help</a>
+            </p>
+        </div>
+
+        <div class="col-md- col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 footer_heading">
+                Contact Us
+            </h5>
+            <p>
+                <i class="fas fa-home mr-3 icon"></i>
+                <a href="#" class="linkColor" style="text-decoration: none;">Mahape, Mumbai</a>
+            </p>
+            <p class="contactInfo">
+                <i class="fas fa-envelope mr-3 icon"></i>
+                <a href="#" class="linkColor" style="text-decoration: none;">cardhut@gmail.com</a>
+            </p>
+            <p>
+                <i class="fas fa-phone mr-3 icon"></i>
+                <a href="#" class="linkColor" style="text-decoration: none;">+92 7894561245</a>
+
+            </p>
+            <p class="contactInfo">
+                <i class="fa-brands fa-twitter mr-3 icon"></i>
+                <a href="#" class="linkColor" style="text-decoration: none;">card_hut</a>
+            </p>
+        </div>
+    </div>
+</footer>

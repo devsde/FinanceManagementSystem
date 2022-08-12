@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top pr-5"
+    style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                    class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown mr-5">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i> Admin</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/adminDashboard']">Dashboard</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewUsers']">View Users</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/addProduct']">Add Product</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewProducts']">View Products</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewTransactions']">View Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider"></div>
+                    <form (ngSubmit)="logOut()">
+                        <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                    </form>
+                    <!-- <a class="dropdown-item" href="#" [routerLink]="['/adminLogin']">Logout</a> -->
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+<div class="container" style="margin-top: 4%;">
+    <div class="row">
+        <div class="card col-lg-8">
+            <h2 class="text-center" style="color: #191970;">Edit Product</h2>
+            <hr style="height:2px; border-width:0; color:#191932; background-color:#191932; ">
+            <br>
+            <form #editproductFrom = "ngForm" (ngSubmit)="editProduct()">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" name="productName" #pname="ngModel" required [(ngModel)]="product.productName" class="form-control" id="inputEmail4"
+                        placeholder="Enter product name">
+                        <div *ngIf="pname.invalid && pname.touched">
+                            <div style="color:red">Product name cannot be empty</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="productCost">Price</label>
+                    <input type="number" name="productCost" required #pcost="ngModel" pattern="^[0-9.]+$" [(ngModel)]="product.productCost" class="form-control" id="inputPassword4" placeholder="Enter price">
+                    <div *ngIf="pcost.invalid && (pcost.touched || pcost.dirty )">
+                        <div *ngIf="pcost.errors?.['required']" style="color:red;">Product price cannot be empty</div>
+                        <div *ngIf="pcost.errors?.['pattern']" style="color:red;">Enter only numbers</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Product Details</label>
+                    <textarea class="form-control" required #pdescription="ngModel"  id="productDescription" [(ngModel)]="product.productDescription" name="productDescription" rows="3"></textarea>
+                    <div *ngIf="pdescription.invalid && pdescription.touched">
+                        <div style="color:red">Product description cannot be empty</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Upload product image</label>
+                    <input type="file" class="form-control-file" id="productImage" [(ngModel)]="product.productImage" name="productImage">
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn login-button" [disabled]="!editproductFrom.form.valid">Edit Product</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <img class="product-image" src="http://localhost:9191/downloads/{{product.productImage}}">
+        </div>
+    </div>
+</div>

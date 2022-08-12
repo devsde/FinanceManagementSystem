@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.main-heading {
+    font-family: fantasy;
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(34, 13, 13), rgb(227, 22, 22));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.product-card {
+    margin: 15px;
+    width: 325px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+form .fa {
+    color: black;
+    bottom: 0;
+}
+
+.card-button {
+    background-color: black;
+    color: white;
+}
+
+.card-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.search-button {
+    height: 30px;
+    padding-bottom: 0px;
+}
+
+.search-button .fa {
+    margin-bottom: 5px;
+}
+
+.search-box {
+    width: 500px;
+    border: 1px solid grey;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.float-button {
+    text-align: right;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.sub-nav-link:hover {
+    border-bottom: 2px solid #191970;
+    color: #191970;
+}
+
+.product-list-start {
+    margin: 10px 50px 0px 50px;
+}
+
+.products-card {
+    margin-bottom: 30px;
+}
+
+.card {
+    box-shadow: 2px;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px 0;
+}
+
+.card-img-top {
+    width: auto;
+    height: 200px;
+}
+
+.collection-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+    padding: 20px;
+}
+
+.collection-box {
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.card-text {
+    font-size: 20px;
+    margin: none;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.collection-box:hover {
+    box-shadow: 0 0 5px 0;
+    border: 1px solid black;
+}
+
+.collection-box p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.small-collection-container {
+    margin: 30px 20px;
+}
+
+.brand1 {
+    background-color: #191970;
+    color: white;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.brand2 {
+    background-color: #F5F5F5;
+    color: #191970;
+    margin-right: 10px;
+    padding: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: bolder;
+}

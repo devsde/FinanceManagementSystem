@@ -1,0 +1,208 @@
+<!-------------------------------------------- navbar start ----------------------------------------------------->
+
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top" style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="input-group">
+                        <input class="search-box" type="search" placeholder=" Search your favourite.." aria-label="Search">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <button class="btn search-button" type="submit"><i class="fa fa-search fa-lg "
+                                        style="color:#191970"></i> </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </li>
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i>{{user.fullName}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/dashboard']">Your Account</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/transactions']">Your Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider"></div>
+                        <form (ngSubmit)="logOut()">
+                            <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                        </form>
+                  
+                   
+                    <!-- <a class="dropdown-item" href="#" [routerLink]="['/login']">Logout</a> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+
+
+<!------------------------------------------- Subnav start ---------------------------------------------------->
+<div class="sub-navigation">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link active">All Categories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link active">Accesories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link active">Mobile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link">Women's Fashion</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link">Men's Fashion</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link">Kids Fashion</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sub-nav-link">Home & Furniture</a>
+        </li>
+    </ul>
+</div>
+
+<!------------------------------------------------ subnav end ---------------------------------------------------->
+
+<!--------------------------------------------- Product list start ----------------------------------------------->
+<section class="product-list-start">
+    <div class="product-category">
+
+        <h3 class="mb-3 pull-left">Newly Added Products</h3>
+        <br><br><br>
+
+        <!-- ---------------------------------------- Row 1 start ------------------------------------------------->
+        <div class="row">
+            <div class="card product-card" *ngFor="let p of products">
+                <img class="card-img-top" src="http://localhost:9191/downloads/{{p.productImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.productName}}</h5>
+                    <p class="card-text">₹ {{p.productCost}}</p>
+                </div>
+                <div class="card-footer">
+                    <form #buyNowForm="ngForm" (ngSubmit)="viewProduct(p.productId)" ngDefaultControl><button type="submit" class="btn card-button">Buy Now</button></form>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <!------------------------------------------------ Row 1 end --------------------------------------------->
+
+
+        <!------------------------------------------------ Row 2 start ------------------------------------------->
+        <!-- <h3>Top picks for you</h3><br>
+        <div class="row">
+            <div class="card  product-card" *ngFor="let p of products">
+                <img class="card-img-top" src="./assets/images/frock-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.productName}}</h5>
+                    <p class="card-text">{{p.productCost}}</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn card-button">Buy Now</button>
+                </div>
+            </div>
+
+        </div> -->
+    </div>
+    <!------------------------------------------------ Row 2 end ------------------------------------------------->
+
+    <!-- ----------------------------------------- Section2 start ------------------------------------------------>
+    <section>
+        <div class="container collection-container">
+            <h2 class="mb-3">Fashion Collection</h2>
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <a href="#" class="collection">
+                        <img src="./assets/images/shirt-1.jpg" alt="">
+                        <p class="collection-title">Men <br> apparels</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <a href="#" class="collection">
+                        <img src="./assets/images/child-7.jpg" alt="">
+                        <p class="collection-title">women <br> apparels</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <h3>Top Selling Styles</h3>
+                <b><i>
+                        <li>Sarees, 
+                       Kurtas</li>
+                        <li>Salwar suits, 
+                      Dresses</li>
+                        <li>T-Shirts, 
+                     Jeans</li></i></b>
+                    and many more....<br><br>
+                    <h4 style="color:#191970"><i>"Save Money With CardHut"</i></h4>
+                    <button class="btn card-button">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------------------- Section 2 end ------------------------------------------------>
+
+    <!------------------------------------------- small collextion start ------------------------------------------>
+
+    <section class="small-collection-container">
+        <h2 class="ml-5">What's Trending </h2><br>
+        <div class="row">
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile1.jpg" alt="">
+                    <p class="collection-title">Oppo F21 Pro</p>
+                </a>
+            </div>
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile-7.jpg" alt="">
+                    <p class="collection-title">Lenovo Vibe X2</p>
+                </a>
+            </div>
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile2.jpg" alt="">
+                    <p class="collection-title">Vivo Y21G</p>
+                </a>
+            </div>
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile-5.jpg" alt="">
+                    <p class="collection-title">Realme Narzo 50 5G</p>
+                </a>
+            </div>
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile3.jpg" alt="">
+                    <p class="collection-title">Apple i-Phone 11</p>
+                </a>
+            </div>
+            <div class="col-lg-2 collection-box">
+                <a href="#" class="collection">
+                    <img src="./assets/images/mobile2.jpg" alt="">
+                    <p class="collection-title">Vivo Y21G</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
+<div class="text-center" style="height:50px; background-color:black; color:white">CardHut.com</div>
+
+<!------------------------------------- small collections end --------------------------------------------------->
+

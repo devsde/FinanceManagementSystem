@@ -1,0 +1,70 @@
+.img-section img {
+    width: auto;
+
+}
+
+/* #carouselExampleIndicators {
+    background-color:#191970;
+} */
+
+.login-section {
+    box-shadow: 0 0 20px 0;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.login-form-section {
+    padding: 50px;
+
+}
+
+.login-button {
+    background-image: linear-gradient(#1e1e77, #191932);
+    color: white;
+    width: 50%;
+}
+
+.login-button:hover {
+    background-image: linear-gradient(#1e1e77,#191932);
+    color: white;
+}
+
+.main-heading {
+    font-family: fantasy;
+    font-size: 50px;
+    background: -webkit-linear-gradient(#1e1e77,#191932);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-input-box {
+    padding: 7px 30px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #191932;
+    outline: none;
+    background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form .fa {
+    top: 17px;
+    right: 90%;
+    color: #191932;
+    bottom: 0;
+    margin-right: 5px;
+}

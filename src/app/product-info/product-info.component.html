@@ -1,0 +1,162 @@
+<!-------------------------------------------- navbar start ----------------------------------------------------->
+
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top" style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i>{{user.fullName}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/dashboard']">Your Account</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/transactions']">Your Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider">  </div>
+                        <form (ngSubmit)="logOut()">
+                            <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                        </form>
+                  
+                  
+                    <!-- <a class="dropdown-item" href="#">Logout</a> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+
+    <div class="container" style="margin-top: 80px;">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img src="http://localhost:9191/downloads/{{product.productImage}}" /></div>
+                        </div>
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">{{product.productName}}</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+                        <p class="product-description">{{product.productDescription}}</p>
+                        <h4 class="price">Price: <span>&#8377; {{product.productCost}}</span></h4>
+                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                        <form #getEmiForm="ngForm" (ngSubmit)="createTransaction()">
+                            <label for="emiScheme"><b>EMI Scheme:</b></label>
+                            <select name="emiScheme" [(ngModel)]="transaction.emiScheme" #emiScheme="ngModel" required id="emiScheme" style="width: 50%;" class="form-control">
+                                <!-- <option selected="selected">--select EMI Scheme--</option> -->
+                                <option value="3">3 months</option>
+                                <option value="6">6 months</option>
+                                <option value="9">9 months</option>
+                                <option value="12">12 months</option>
+                            </select>
+                            <div class="row mb-0 ml-2">
+                                <div class="alert-error" *ngIf="emiScheme.touched && emiScheme.errors">
+                                    <p style="list-style: none; color:red;" *ngIf="emiScheme.errors?.['required']">Emi Scheme is required. </p> 
+                                </div>
+                            </div>
+                            <!-- <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button> -->
+                       
+                            <div class="action">
+                                <button class="add-to-cart btn btn-default mt-3 mr-3" type="submit" [disabled]="!getEmiForm.form.valid">BUY NOW</button>
+                                <button class="like btn btn-default mt-3" type="button"><span class="fa fa-heart"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- <br><br><br><br>
+<div class="media">
+    <img class="align-self-center mr-2" src="./assets/images/mobile3.jpg" alt="Generic placeholder image" width="510"
+        height="510" style="padding-inline: 15px 20px;">
+    <div class="media-body">
+        <h3 class="mt-0">{{product.productName}}</h3>
+        <h5 class="mt-0">&#8377; {{product.productCost}}</h5>
+
+        <p>{{product.productDescription}}</p>
+
+    </div>
+</div>
+<br><br>
+
+<form #productForm="ngForm">
+    <select name="emiScheme" id="emiScheme">
+        <option value="3">3 months</option>
+        <option value="6">6 months</option>
+        <option value="9">9 months</option>
+        <option value="12">12 months</option>
+    </select>
+    <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button>
+
+</form>
+
+<br><br>
+<div class="card-deck products-card">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">3 MONTHS EMI</h5>
+            <p class="card-text" style="text-align: center;">Rs. 10,999 Per Month</p>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">6 MONTHS EMI</h5>
+            <p class="card-text" style="text-align: center;">Rs. 5,499 Per Month</p>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">9 MONTHS EMI</h5>
+            <p class="card-text" style="text-align: center;">Rs. 3,666 Per Month</p>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">12 MONTHS EMI</h5>
+            <p class="card-text" style="text-align: center;">Rs. 2,749 Per Month</p>
+        </div>
+        <div class="card-footer text-center">
+            <button type="button" class="btn btn-outline-dark" [routerLink]="['/transactionReceipt']">Buy Now</button>
+        </div>
+    </div>
+
+</div>
+<br> -->

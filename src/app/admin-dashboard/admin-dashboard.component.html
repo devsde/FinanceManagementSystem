@@ -1,0 +1,100 @@
+<!----------------------------------- Navbar start --------------------------------------------------->
+<div class="full">
+
+    <nav class="navbar navbar-expand-lg justify-content-between fixed-top" style="background-color: rgb(176, 176, 176);">
+        <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                    class="logo">CardHut</a> -->
+        <!-- <div class="main-heading">CardHut</div> -->
+        <div class="brand1" href="#">CARD</div>
+        <div class="brand2" href="#">HUT</div>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+                <li class="nav-item mr-5" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970;"></i>ADMin
+                </li>
+
+                <li class="nav-item mr-2">
+                    <form (ngSubmit)="logOut()">
+                        <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                    </form>
+                    <!-- <a style="color:#191970 ;" href="#" [routerLink]="['/adminLogin']">Logout</a> -->
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!-------------------------------------------- navbar End ----------------------------------------------------->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="./assets/images/users.png" style="height: 150px; width:150px;">
+                        <br><br>
+                        <a [routerLink]="['/viewUsers']" class="btn login-button">View Users</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="./assets/images/add-product.png" style="height: 150px; width:150px;">
+                        <br><br>
+                        <a [routerLink]="['/addProduct']" class="btn login-button">Add Product</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="./assets/images/viewproduct.png" style="height: 150px; width:150px;">
+                        <br><br>
+                        <a [routerLink]="['/viewProducts']" class="btn login-button">View Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="./assets/images/transaction.png" style="height: 150px; width:150px;">
+                        <br><br>
+                        <a [routerLink]="['/viewTransactions']" class="btn login-button">View Transactions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h5>Frequent Users</h5>
+            <div class="progress">
+                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <h5>Products Purchased</h5>
+            <div class="progress">
+                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <h5>Successful Transactions</h5>
+            <div class="progress">
+                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 65%"></div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+</div>

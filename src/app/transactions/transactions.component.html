@@ -1,0 +1,130 @@
+<!-------------------------------------------- navbar start ----------------------------------------------------->
+
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top" style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i>{{user.fullName}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/dashboard']">Your Account</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/transactions']">Your Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider"></div>
+                        <form (ngSubmit)="logOut()">
+                            <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                        </form>
+                    
+                  
+                    <!-- <a class="dropdown-item" href="#" [routerLink]="['/login']">Logout</a> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h2>Transaction History</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="table-filter">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="show-entries">
+                            <span>Show</span>
+                            <select class="form-control">
+                                <option>5</option>
+                                <option>10</option>
+                                <option>15</option>
+                                <option>20</option>
+                            </select>
+                            <span>entries</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        <div class="filter-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <span class="filter-icon"><i class="fa fa-filter"></i></span>
+                    </div>
+                </div>
+            </div> -->
+            <table class="table table-striped table-hover">
+                <thead class="text-center">
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Product Name</th>
+                        <th>Order Date</th>
+                        <th>EMI Scheme</th>
+                        <th>EMI Paid</th>
+                        <th>Paid Amount</th>
+                        <th>Balance Amount</th>
+                        <th>Total Amount</th>
+                        <th>Pay EMI</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let t of transactions">
+                        <td>{{t.transactionId}}</td>
+                        <td>{{t.product.productName}}</td>
+                        <td>{{t.orderDate}}</td>
+                        <td>{{t.emiScheme}} months</td>
+                        <td>{{t.emiPaid}}</td>
+                        <td>{{t.paidAmount | number: '1.1-2'}}</td>
+                        <td>{{t.balanceAmount | number: '1.1-2'}}</td>
+                        <td>{{t.totalAmount | number: '1.1-2'}}</td>
+                        <td>
+                            <form #payButton="ngForm" (ngSubmit)="updateEmi(t)">
+                                <div *ngIf="t.emiRemaining==0">
+                                    <button disabled class="btn btn-secondary">PAY</button>
+                                </div>
+                                <div *ngIf="t.emiRemaining!=0">
+                                    <button class="btn btn-primary">PAY</button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">6</a></li>
+                    <li class="page-item"><a href="#" class="page-link">7</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<!-- <td><a href="#" class="view" title="View Details" data-toggle="tooltip" [routerLink]="['/transactionReceipt']"><i
+            class="material-icons">Pay</i></a></td> -->

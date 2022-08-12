@@ -1,0 +1,44 @@
+.products-card {
+    margin: 15px;
+    width: 450px;
+}
+
+.card {
+    box-shadow: 2px;
+}
+
+
+.card-img-top {
+    width: auto;
+    height: 200px;
+}
+
+.card-button {
+    background-color: black;
+    color: white;
+}
+
+.card-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.brand1 {
+    background-color: #191970;
+    color: white;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.brand2 {
+    background-color: #F5F5F5;
+    color: #191970;
+    margin-right: 10px;
+    padding: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: bolder;
+}

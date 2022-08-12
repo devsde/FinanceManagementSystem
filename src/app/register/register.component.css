@@ -1,0 +1,40 @@
+.login-button {
+    background-image: linear-gradient(#1e1e77, #191932);
+    color: white;
+    width: 20%;
+}
+
+.login-button:hover {
+    background-image: linear-gradient(#1e1e77,#191932);
+    color: white;
+}
+
+.chapterCard {
+    padding: 10px;
+    border: 2px solid rgb(56, 6, 6);
+}
+
+.extra-div {
+    margin: 10px;
+}
+
+.card-text {
+    padding: 10px;
+    border-bottom: 2px solid #191932;
+    border-left: 2px solid #191932;
+    border-right: 2px solid #4d4da1;
+    border-top: 2px solid #4d4da1;
+    margin-left: 0px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0;
+    margin-top: 50px;
+}
+
+.main-heading {
+    font-family: fantasy;
+    font-size: 50px;
+    background: -webkit-linear-gradient(#1e1e77,#191932);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

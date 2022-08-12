@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top pr-5"
+    style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                    class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown mr-5">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i> Admin</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/adminDashboard']">Dashboard</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewUsers']">View Users</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/addProduct']">Add Product</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewProducts']">View Products</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewTransactions']">View Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" [routerLink]="['/adminLogin']">Logout</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<div class="container-xl" style="margin-top: 5%;">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h2>Transactions</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <table class="table table-striped table-hover">
+                <thead class="text-center">
+                    <tr>
+                        <!-- <th>#</th> -->
+                        <th>Transaction ID</th>
+                        <th>User ID</th>
+                        <th>EMI Scheme</th>
+                        <th>Order Date</th>
+                        <th>Paid Amount</th>
+                        <th>Balance Amount</th>
+                        <th>Total Amount</th>
+                        <th>EMI Paid</th>
+                        <th>EMI Remaining</th>
+
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let t of transactions">
+                        <!-- <td></td> -->
+                        <td>{{t.transactionId}}</td>
+                        <td>{{t.emiCard.user.userId}}</td>
+                        <td>{{t.emiScheme}} months</td>
+                        <td>{{t.orderDate}}</td>
+                        <td>{{t.paidAmount}}</td>
+                        <td>{{t.balanceAmount}}</td>
+                        <td>{{t.totalAmount}}</td>
+                        <td>{{t.emiPaid}}</td>
+                        <td>{{t.emiRemaining}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

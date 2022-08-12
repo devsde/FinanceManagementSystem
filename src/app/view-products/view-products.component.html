@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top pr-5"
+    style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                    class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown mr-5">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i> Admin</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/adminDashboard']">Dashboard</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewUsers']">View Users</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/addProduct']">Add Product</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewProducts']">View Products</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/viewTransactions']">View Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider">  </div>
+                        <form (ngSubmit)="logOut()">
+                            <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                        </form>
+                  
+              
+                    <!-- <a class="dropdown-item" href="#" [routerLink]="['/adminLogin']">Logout</a> -->
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+
+<!-- ---------------------------------------- Row 1 start ------------------------------------------------->
+<div class="container-xl mr-5 ml-5" style="margin-top: 5%;">
+    <div class="row">
+    <div class="card-deck products-card" *ngFor="let p of products">
+        <div class="card">
+            <img class="card-img-top" src="http://localhost:9191/downloads/{{p.productImage}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{p.productName}}</h5>
+                <p class="card-text">&#8377; {{p.productCost}}</p>
+            </div>
+            <div class="card-footer">
+                <form #editButton="ngForm" (ngSubmit)="edit(p.productId)" ngDefaultControl>
+                    <button class="btn card-button">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!------------------------------------------------ Row 1 end --------------------------------------------->

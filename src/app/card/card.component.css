@@ -1,0 +1,26 @@
+.cards {
+    height: 400px;
+}
+
+/* .cards:hover {
+    transform: scale(1.1);
+} */
+
+.card_header {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 6px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.titanium{
+    background-color: rgb(199, 196, 196);
+}
+
+.gold{
+    background-color: #E6B325;
+}
+
+li{
+    list-style: none;
+}

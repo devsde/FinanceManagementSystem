@@ -1,0 +1,135 @@
+<!-------------------------------------------- navbar start ----------------------------------------------------->
+
+<nav class="navbar navbar-expand-lg justify-content-between fixed-top" style="background-color: rgb(176, 176, 176);">
+    <!-- <a class="navbar-brand font-weight-bold main-heading " href="#"><img src="../images/child-5.jpg"
+                class="logo">CardHut</a> -->
+    <!-- <div class="main-heading">CardHut</div> -->
+    <div class="brand1" href="#">CARD</div>
+    <div class="brand2" href="#">HUT</div>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto font-weight-bold text-uppercase">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color:#191970">
+                    <i class="fa fa-user fa-lg ml-2 mr-2" style="color:#191970"></i>{{user.fullName}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" [routerLink]="['/dashboard']">Your Account</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/transactions']">Your Transactions</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider">  </div>
+                        <form (ngSubmit)="logOut()">
+                            <button type="submit" style="color:#191970 ; border:none; background-color:transparent"><b>LOGOUT</b></button>
+                        </form>
+                  
+                  
+                    <!-- <a class="dropdown-item" href="#" [routerLink]="['/login']">Logout</a> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-------------------------------------------- navbar End ----------------------------------------------------->
+
+
+<div class="container mt-5">
+    <div class="col-md-12">
+        <div class="invoice">
+            <!-- begin invoice-company -->
+            <div class="invoice-company text-inverse f-w-600">
+                <b>TRANSACTION RECEIPT</b>
+                <span class="pull-right hidden-print">
+                    <a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-black m-b-10 p-l-5"><i
+                            class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print</a>
+                </span>
+            </div>
+            <!-- end invoice-company -->
+            <!-- begin invoice-header -->
+            <div class="invoice-header">
+                <div class="invoice-date">
+                    <!-- <small>Invoice / July period</small> -->
+                    <div class="invoice-detaildate text-inverse m-t-5"><b>Transaction Date: </b>{{transaction.orderDate}}</div>
+                    <div class="invoice-detail">
+                        <b>Transaction ID:</b> {{transaction.transactionId}}<br>
+                        <b>EMI Scheme:</b> {{transaction.emiScheme}} months
+                    </div>
+                </div>
+            </div>
+            <!-- end invoice-header -->
+            <!-- begin invoice-content -->
+            <div class="invoice-content">
+                <!-- begin table-responsive -->
+                <div class="table-responsive">
+                    <table class="table table-invoice">
+                        <thead>
+                            <tr>
+                                <th>PRODUCT DESCRIPTION</th>
+                                <th class="text-center" width="20%">PAID AMOUNT</th>
+                                <th class="text-right" width="20%">PENDING AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="text-inverse">{{transaction.product.productName}}</span><br>
+                                    <small>{{transaction.product.productDescription}}</small>
+                                </td>
+                                <td class="text-center">₹{{transaction.paidAmount | number: '1.1-2'}}</td>
+                                <!-- <td class="text-center">50</td> -->
+                                <td class="text-right">₹{{transaction.balanceAmount | number: '1.1-2'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table-responsive -->
+                <!-- begin invoice-price -->
+                <div class="invoice-price">
+                    <div class="invoice-price-left">
+                        <div class="invoice-price-row">
+                            <div class="sub-price">
+                                <small>SUBTOTAL</small>
+                                <span class="text-inverse">₹ {{transaction.product.productCost | number: '1.1-2'}}</span>
+                            </div>
+                            <div class="sub-price">
+                                <i class="fa fa-plus text-muted"></i>
+                            </div>
+                            <div class="sub-price">
+                                <small>PROCESSING FEE (3.2%)</small>
+                                <span class="text-inverse">₹ {{0.032 * transaction.product.productCost | number: '1.1-2'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-price-right">
+                        <small>TOTAL</small> <span class="f-w-600">₹ {{transaction.totalAmount | number: '1.1-2'}}</span>
+                    </div>
+                </div>
+                <!-- end invoice-price -->
+            </div>
+            <!-- end invoice-content -->
+            <!-- begin invoice-note -->
+            <div class="invoice-note">
+                * Payment is due within 30 days.<br>
+                * If you have any questions concerning this invoice, contact us.
+            </div>
+            <!-- end invoice-note -->
+            <!-- begin invoice-footer -->
+            <div class="invoice-footer">
+                <p class="text-center mb-5 fw-600">
+                    THANK YOU FOR SHOPPING WITH US
+                </p>
+                <p class="text-center">
+                    <span class="mr-5"><i class="fa fa-fw fa-lg fa-globe"></i>cardhut.com</span>
+                    <span class="mr-5"><i class="fa fa-fw fa-lg fa-phone-volume"></i>022-25577111</span>
+                    <span class="mr-5"><i class="fa fa-fw fa-lg fa-envelope"></i>contact@cardhut.com</span>
+                </p>
+            </div>
+            <!-- end invoice-footer -->
+        </div>
+    </div>
+</div>
